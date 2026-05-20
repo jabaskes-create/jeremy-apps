@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps for people who love food, travel and money</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gt-hue: #1a6b4a;
+    --gt-light: #e8f5ef;
+    --gt-mid: #3d9970;
+    --nb-hue: #b5430b;
+    --nb-light: #fdf0ea;
+    --nb-mid: #e06030;
+    --pt-hue: #1a3f6b;
+    --pt-light: #e8eef8;
+    --pt-mid: #3060b0;
+    --ink: #1c1c1c;
+    --muted: #666;
+    --rule: #e0ddd8;
+    --bg: #faf9f7;
+    --card-bg: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gt-mid), var(--nb-mid), var(--pt-mid));
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .hero-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--rule);
+    margin: 40px auto;
+  }
+
+  /* APP CARDS */
+  .apps {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .app-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    opacity: 0;
+    transform: translateY(28px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .app-card:nth-child(1) { animation-delay: 0.1s; }
+  .app-card:nth-child(2) { animation-delay: 0.25s; }
+  .app-card:nth-child(3) { animation-delay: 0.4s; }
+
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.09);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-header {
+    padding: 28px 32px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .app-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .gt-icon { background: var(--gt-light); }
+  .nb-icon { background: var(--nb-light); }
+  .pt-icon { background: var(--pt-light); }
+
+  .card-title-block { flex: 1; }
+
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .card-tagline {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+
+  .card-url {
+    align-self: center;
+  }
+
+  .card-url a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .gt .card-url a { color: var(--gt-hue); border-color: var(--gt-mid); background: var(--gt-light); }
+  .gt .card-url a:hover { background: var(--gt-mid); color: #fff; }
+  .nb .card-url a { color: var(--nb-hue); border-color: var(--nb-mid); background: var(--nb-light); }
+  .nb .card-url a:hover { background: var(--nb-mid); color: #fff; }
+  .pt .card-url a { color: var(--pt-hue); border-color: var(--pt-mid); background: var(--pt-light); }
+  .pt .card-url a:hover { background: var(--pt-mid); color: #fff; }
+
+  .card-body {
+    padding: 24px 32px 28px;
+  }
+
+  .card-desc {
+    font-size: 15px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 22px;
+  }
+
+  .features-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .feature-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .gt .feature-dot { background: var(--gt-mid); }
+  .nb .feature-dot { background: var(--nb-mid); }
+  .pt .feature-dot { background: var(--pt-mid); }
+
+  .card-accent {
+    height: 4px;
+  }
+
+  .gt .card-accent { background: var(--gt-mid); }
+  .nb .card-accent { background: var(--nb-mid); }
+  .pt .card-accent { background: var(--pt-mid); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px 24px 48px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .footer strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* HERO ANIM */
+  .hero-content {
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.05s forwards;
+  }
+
+  @media (max-width: 580px) {
+    .card-header { flex-wrap: wrap; gap: 12px; }
+    .card-url { width: 100%; }
+    .card-url a { width: 100%; text-align: center; display: block; }
+    .card-body { padding: 20px 20px 24px; }
+    .card-header { padding: 20px 20px 16px; }
+  }
+
+  /* GET STARTED PANEL */
+  .get-started-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .get-started-toggle:hover { opacity: 0.7; }
+
+  .gt .get-started-toggle { color: var(--gt-hue); }
+  .nb .get-started-toggle { color: var(--nb-hue); }
+  .pt .get-started-toggle { color: var(--pt-hue); }
+
+  .toggle-arrow {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+  .toggle-arrow.open { transform: rotate(90deg); }
+
+  .get-started-panel {
+    display: none;
+    margin-top: 16px;
+    border-top: 1px solid var(--rule);
+    padding-top: 18px;
+  }
+  .get-started-panel.open { display: block; }
+
+  .gs-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .gs-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+  }
+
+  .gs-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .gs-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .gt .gs-num { background: var(--gt-light); color: var(--gt-hue); }
+  .nb .gs-num { background: var(--nb-light); color: var(--nb-hue); }
+  .pt .gs-num { background: var(--pt-light); color: var(--pt-hue); }
+
+  .gs-step a {
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .gt .gs-step a { color: var(--gt-hue); }
+  .nb .gs-step a { color: var(--nb-hue); }
+  .pt .gs-step a { color: var(--pt-hue); }
+
+  /* CONTACT */
+  .contact {
+    background: var(--card-bg);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 48px 24px;
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .contact-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .contact-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .contact-body {
+    font-size: 15px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .contact-link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 10px 24px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    background: var(--bg);
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: #aaa;
+    background: var(--card-bg);
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Made with care by Jeremy</p>
+    <h1>Apps for people who love<br><em>food, travel and money</em></h1>
+    <p class="hero-sub">No subscriptions, no ads, no nonsense. Just useful tools made for people like you.</p>
+  </div>
+  <div class="hero-divider"></div>
+</header>
+
+<main class="apps">
+
+  <!-- Gulliver Travels -->
+  <article class="app-card gt">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="app-icon gt-icon">🧳</div>
+      <div class="card-title-block">
+        <div class="card-name">Gulliver Travels</div>
+        <div class="card-tagline">Your personal travel command center</div>
+      </div>
+      <div class="card-url">
+        <a href="https://gullivertravels.app" target="_blank" rel="noopener">Open app ↗</a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">
+        A trip organizer built to replace TripIt — forward your confirmation emails and they automatically become a clean, day-by-day itinerary. Great for solo travel or planning trips with others.
+      </p>
+      <p class="features-label">What it does</p>
+      <ul class="features">
+        <li class="feature"><span class="feature-dot"></span>Forward booking emails or even photos of a reservation and Gulliver Travels automatically places them in your itinerary — flights, hotels, restaurants, and more</li>
+        <li class="feature"><span class="feature-dot"></span>Day-by-day view with weather, TSA wait times, and airport info</li>
+        <li class="feature"><span class="feature-dot"></span>Share and sync trips with travel companions</li>
+        <li class="feature"><span class="feature-dot"></span>Easily create and share a curated list of your favorite restaurants for any destination</li>
+        <li class="feature"><span class="feature-dot"></span>Packing helper — get a smart packing list tailored to your trip and destinations</li>
+        <li class="feature"><span class="feature-dot"></span>Subscribe to a calendar feed so your trips show up in Apple Calendar or Google Calendar automatically</li>
+      </ul>
+
+      <button class="get-started-toggle" onclick="togglePanel(this)">
+        <span class="toggle-arrow">▶</span> Get started
+      </button>
+      <div class="get-started-panel">
+        <p class="gs-label">How to get started</p>
+        <ol class="gs-steps">
+          <li class="gs-step"><span class="gs-num">1</span><span>Go to <a href="https://gullivertravels.app" target="_blank" rel="noopener">gullivertravels.app</a> and sign up with your Google account or email address.</span></li>
+          <li class="gs-step"><span class="gs-num">2</span><span>Once you're in, add your first trip — give it a name and travel dates.</span></li>
+          <li class="gs-step"><span class="gs-num">3</span><span>Forward any booking confirmation email to <strong>GulliverTravelsPlans@gmail.com</strong> and watch it appear in your itinerary automatically.</span></li>
+          <li class="gs-step"><span class="gs-num">4</span><span>Explore the trip view — check weather, nearby places, and share your itinerary with anyone traveling with you.</span></li>
+          <li class="gs-step"><span class="gs-num">5</span><span>Add Gulliver Travels to your phone's home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android. It'll open full-screen just like a native app.</span></li>
+        </ol>
+      </div>
+    </div>
+  </article>
+
+  <!-- Nightly Bites -->
+  <article class="app-card nb">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="app-icon nb-icon">🍽️</div>
+      <div class="card-title-block">
+        <div class="card-name">Nightly Bites</div>
+        <div class="card-tagline">A meal journal for people who love food</div>
+      </div>
+      <div class="card-url">
+        <a href="https://nightly-bites-web.vercel.app" target="_blank" rel="noopener">Open app ↗</a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">
+        Track the meals you've made, save recipes you love, and get dinner ideas when you're drawing a blank. Built for a small group — everyone's entries are shared, so it becomes a living record of meals enjoyed together.
+      </p>
+      <p class="features-label">What it does</p>
+      <ul class="features">
+        <li class="feature"><span class="feature-dot"></span>Log meals with photos, ratings, and notes</li>
+        <li class="feature"><span class="feature-dot"></span>Community Cookbook — recipes anyone in the group has saved, all in one place</li>
+        <li class="feature"><span class="feature-dot"></span>Paste a recipe URL and a clean, formatted version is saved instantly</li>
+        <li class="feature"><span class="feature-dot"></span>Dinner suggestion feature — tell it what's in your fridge, get ideas back</li>
+        <li class="feature"><span class="feature-dot"></span>Your personal recipe box for anything you want to keep handy</li>
+      </ul>
+
+      <button class="get-started-toggle" onclick="togglePanel(this)">
+        <span class="toggle-arrow">▶</span> Get started
+      </button>
+      <div class="get-started-panel">
+        <p class="gs-label">How to get started</p>
+        <ol class="gs-steps">
+          <li class="gs-step"><span class="gs-num">1</span><span>Go to <a href="https://nightly-bites-web.vercel.app" target="_blank" rel="noopener">nightly-bites-web.vercel.app</a> and sign up with your Google account or email address.</span></li>
+          <li class="gs-step"><span class="gs-num">2</span><span>Log your first meal — add a photo, a rating, and a few notes about what you made or ate.</span></li>
+          <li class="gs-step"><span class="gs-num">3</span><span>Browse the Community Cookbook to see what others in the group have been cooking and saving.</span></li>
+          <li class="gs-step"><span class="gs-num">4</span><span>Try the recipe saver — paste any recipe URL and it'll be cleaned up and added to your recipe box instantly.</span></li>
+          <li class="gs-step"><span class="gs-num">5</span><span>Add Nightly Bites to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android. It opens full-screen with no browser in the way.</span></li>
+        </ol>
+      </div>
+    </div>
+  </article>
+
+  <!-- Point-Taken -->
+  <article class="app-card pt">
+    <div class="card-accent"></div>
+    <div class="card-header">
+      <div class="app-icon pt-icon">💳</div>
+      <div class="card-title-block">
+        <div class="card-name">Point-Taken</div>
+        <div class="card-tagline">Know exactly where your money goes</div>
+      </div>
+      <div class="card-url">
+        <a href="https://point-taken-tan.vercel.app" target="_blank" rel="noopener">Open app ↗</a>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-desc">
+        A personal finance tracker that connects securely to your bank accounts and credit cards, automatically syncing transactions so you always have a clear picture of your spending — without the complexity of apps like <s>Mint</s>.
+      </p>
+      <p class="features-label">What it does</p>
+      <ul class="features">
+        <li class="feature"><span class="feature-dot"></span>All credit card and bank transactions merged into a single unified view — one place to search and find any charge</li>
+        <li class="feature"><span class="feature-dot"></span>Clean spending breakdown by category, merchant, and card</li>
+        <li class="feature"><span class="feature-dot"></span>Tracks your credit card benefits — which perks are available and which you've already used</li>
+        <li class="feature"><span class="feature-dot"></span>Track recurring expenses to monitor subscriptions</li>
+        <li class="feature"><span class="feature-dot"></span>"Which card should I use?" — recommendations based on your actual cards and rewards</li>
+      </ul>
+
+      <button class="get-started-toggle" onclick="togglePanel(this)">
+        <span class="toggle-arrow">▶</span> Get started
+      </button>
+      <div class="get-started-panel">
+        <p class="gs-label">How to get started</p>
+        <ol class="gs-steps">
+          <li class="gs-step"><span class="gs-num">1</span><span>Go to <a href="https://point-taken-tan.vercel.app" target="_blank" rel="noopener">point-taken-tan.vercel.app</a> and sign up with your Google account or email address.</span></li>
+          <li class="gs-step"><span class="gs-num">2</span><span>Create a <a href="https://beta-bridge.simplefin.org" target="_blank" rel="noopener">SimpleFIN account</a> ($1.50/month or $15/year) — this is the secure bridge that connects your banks without sharing your passwords.</span></li>
+          <li class="gs-step"><span class="gs-num">3</span><span>In SimpleFIN, connect your banks and credit cards, then generate a setup token and paste it into Point-Taken. One-time setup.</span></li>
+          <li class="gs-step"><span class="gs-num">4</span><span>Your transactions will start syncing automatically. Explore your spending breakdown, set up your cards, and check which benefits you still have available.</span></li>
+          <li class="gs-step"><span class="gs-num">5</span><span>Add Point-Taken to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android — for quick access anytime you want to check your spending.</span></li>
+        </ol>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<section class="contact">
+  <div class="contact-inner">
+    <p class="contact-eyebrow">Questions? Feedback? Something not working?</p>
+    <h2 class="contact-heading">Reach out to the team</h2>
+    <p class="contact-body">Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share additions you would like. Don't be shy.</p>
+    <a class="contact-link" href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>Built by <strong>Jeremy &amp; Hazel</strong> — for friends &amp; family, with love.</p>
+</footer>
+
+<script>
+function togglePanel(btn) {
+  const arrow = btn.querySelector('.toggle-arrow');
+  const panel = btn.nextElementSibling;
+  const isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open', !isOpen);
+  arrow.classList.toggle('open', !isOpen);
+  btn.querySelector('span:last-child') && (btn.lastChild.textContent = isOpen ? ' Get started' : ' Hide');
+}
+</script>
+</body>
+</html>
