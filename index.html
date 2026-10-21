@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apps for people who love food, travel, gardening and money</title>
+  <title>Apps for people who love food, travel and money</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -250,7 +250,9 @@
     .card-gulliver { --accent: #4a7c6f; }
     .card-nightly  { --accent: #c06b3a; }
     .card-point    { --accent: #2a3a6a; }
+    .card-wine     { --accent: #7a2a4a; }
     .card-hazel    { --accent: #5a7a3a; }
+    .card-sibs     { --accent: #5a5aaa; }
 
     footer {
       text-align: center;
@@ -295,7 +297,7 @@
 <body>
 
 <header>
-  <h1>Apps for people who love <em>food, travel, gardening and money</em></h1>
+  <h1>Apps for people who love <em>food, travel and money</em></h1>
   <p>No subscriptions, no ads, no nonsense. Just useful tools made for people like you.</p>
 </header>
 
@@ -404,6 +406,39 @@
     </div>
   </div>
 
+  <!-- Wine App -->
+  <div class="card card-wine">
+    <div class="card-header">
+      <div class="card-tag">🍷 Wine</div>
+      <div class="card-title">Bottle Notes</div>
+      <div class="card-subtitle">Scan a label, build your cellar</div>
+      <p class="card-description">Point your camera at any wine label and the details are pulled in automatically — vintner, grapes, origin, vintage, and more. Log tasting notes, track bottles you own, and build a searchable record of everything you've tried.</p>
+      <div class="card-actions">
+        <a href="https://wine-tasting-six.vercel.app" target="_blank" class="btn-open">Open app ↗</a>
+        <button class="btn-toggle" onclick="toggleCard(this)">
+          ▶ Get started <span class="arrow">›</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-details">
+      <div class="features-label">What it does</div>
+      <ul class="features-list">
+        <li>Scan any wine label with your phone camera — name, vintner, grapes, origin, and alcohol pulled in automatically</li>
+        <li>Add tasting notes, a rating, and where you tried it</li>
+        <li>Track your collection — bottles owned, quantities, and a "Drink a bottle" flow to keep counts accurate</li>
+        <li>Want to Try list for wines you've heard about but haven't opened yet</li>
+        <li>Searchable history of every wine you've logged</li>
+      </ul>
+      <div class="steps-label">How to get started</div>
+      <ol class="steps-list">
+        <li><span class="step-num">1</span><span>Go to <a href="https://wine-tasting-six.vercel.app" target="_blank">wine-tasting-six.vercel.app</a> and sign up with your Google account or email address.</span></li>
+        <li><span class="step-num">2</span><span>Tap the scan button, point your camera at a wine label, and let it do its thing.</span></li>
+        <li><span class="step-num">3</span><span>Add your notes — where you had it, what you thought, how you'd rate it.</span></li>
+        <li><span class="step-num">4</span><span>Add Bottle Notes to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android — so it's always handy at a restaurant or a shop.</span></li>
+      </ol>
+    </div>
+  </div>
+
   <!-- Hazel's Garden -->
   <div class="card card-hazel">
     <div class="card-header">
@@ -434,8 +469,8 @@
     </div>
   </div>
 
-  <!-- Traveling Sibs -->
-  <div class="card card-sibs" style="--accent: #3b82f6;">
+  <!-- Traveling Sibs -->
+  <div class="card card-sibs">
     <div class="card-header">
       <div class="card-tag">✈️ Travel</div>
       <div class="card-title">Traveling Sibs <span class="by-request-badge">Private</span></div>
@@ -455,30 +490,16 @@
         <li>Personalized Google Calendar feed — subscribe once and it auto-refreshes, showing only the others' dates so there's no duplication</li>
         <li>Private app — login required, accounts by invitation only</li>
       </ul>
+      <div class="steps-label">How to get access</div>
+      <div class="request-note">
+        Traveling Sibs is a private app. If you received an invite from Jeremy, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> to get set up.
+      </div>
     </div>
   </div>
-
 
 </main>
 
 <footer>
   <div class="contact-section">
     <h2>Reach out to the team</h2>
-    <p>Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share additions you would like. Don't be shy.</p>
-    <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a>
-  </div>
-  <p>Built by <strong>Jeremy & Hazel</strong> — for friends & family, with love.</p>
-</footer>
-
-<script>
-  function toggleCard(btn) {
-    const details = btn.closest('.card-header').nextElementSibling;
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.querySelector('.arrow').style.transform = !isOpen ? 'rotate(90deg)' : '';
-  }
-</script>
-
-</body>
-</html>
+    <p>Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share ad
