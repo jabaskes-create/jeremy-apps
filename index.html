@@ -294,6 +294,78 @@
     }
 
     footer .contact-section a:hover { text-decoration: underline; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 0 -28px 24px;
+      background: #f0f0f0;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.35s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    .carousel-slide img {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: cover;
+      object-position: top;
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.5));
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 20px 14px 10px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+      z-index: 2;
+    }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 2;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: white; }
   </style>
 </head>
 <body>
@@ -320,263 +392,7 @@
       </div>
     </div>
     <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Forward booking emails or even photos of a reservation and Gulliver Travels automatically places them in your itinerary — flights, hotels, restaurants, and more</li>
-        <li>Day-by-day view with weather, TSA wait times, and airport info</li>
-        <li>Share and sync trips with travel companions</li>
-        <li>Easily create and share a curated list of your favorite restaurants for any destination</li>
-        <li>Packing helper — get a smart packing list tailored to your trip and destinations</li>
-        <li>Subscribe to a calendar feed so your trips show up in Apple Calendar or Google Calendar automatically</li>
-      </ul>
-      <div class="steps-label">How to get started</div>
-      <ol class="steps-list">
-        <li><span class="step-num">1</span><span>Go to <a href="https://gullivertravels.app" target="_blank">gullivertravels.app</a> and sign up with your Google account or email address.</span></li>
-        <li><span class="step-num">2</span><span>Once you're in, add your first trip — give it a name and travel dates.</span></li>
-        <li><span class="step-num">3</span><span>Forward any booking confirmation email to <strong>GulliverTravelsPlans@gmail.com</strong> and watch it appear in your itinerary automatically.</span></li>
-        <li><span class="step-num">4</span><span>Explore the trip view — check weather, nearby places, and share your itinerary with anyone traveling with you.</span></li>
-        <li><span class="step-num">5</span><span>Add Gulliver Travels to your phone's home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android. It'll open full-screen just like a native app.</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Nightly Bites -->
-  <div class="card card-nightly">
-    <div class="card-header">
-      <div class="card-tag">🍽️ Food</div>
-      <div class="card-title">Nightly Bites</div>
-      <div class="card-subtitle">A meal journal for people who love food</div>
-      <p class="card-description">Track the meals you've made, save recipes you love, and get dinner ideas when you're drawing a blank. Built for a small group — everyone's entries are shared, so it becomes a living record of meals enjoyed together.</p>
-      <div class="card-actions">
-        <a href="https://nightly-bites-web.vercel.app" target="_blank" class="btn-open">Open app ↗</a>
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Get started <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Log meals with photos, ratings, and notes</li>
-        <li>Community Cookbook — recipes anyone in the group has saved, all in one place</li>
-        <li>Paste a recipe URL and a clean, formatted version is saved instantly</li>
-        <li>Dinner suggestion feature — tell it what's in your fridge, get ideas back</li>
-        <li>Your personal recipe box for anything you want to keep handy</li>
-      </ul>
-      <div class="steps-label">How to get started</div>
-      <ol class="steps-list">
-        <li><span class="step-num">1</span><span>Go to <a href="https://nightly-bites-web.vercel.app" target="_blank">nightly-bites-web.vercel.app</a> and sign up with your Google account or email address.</span></li>
-        <li><span class="step-num">2</span><span>Log your first meal — add a photo, a rating, and a few notes about what you made or ate.</span></li>
-        <li><span class="step-num">3</span><span>Browse the Community Cookbook to see what others in the group have been cooking and saving.</span></li>
-        <li><span class="step-num">4</span><span>Try the recipe saver — paste any recipe URL and it'll be cleaned up and added to your recipe box instantly.</span></li>
-        <li><span class="step-num">5</span><span>Add Nightly Bites to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android. It opens full-screen with no browser in the way.</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Point-Taken -->
-  <div class="card card-point">
-    <div class="card-header">
-      <div class="card-tag">💳 Finance</div>
-      <div class="card-title">Point-Taken</div>
-      <div class="card-subtitle">Know exactly where your money goes</div>
-      <p class="card-description">A personal finance tracker that connects securely to your bank accounts and credit cards, automatically syncing transactions so you always have a clear picture of your spending.</p>
-      <div class="card-actions">
-        <a href="https://point-taken-tan.vercel.app" target="_blank" class="btn-open">Open app ↗</a>
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Get started <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>All credit card and bank transactions merged into a single unified view — one place to search and find any charge</li>
-        <li>Clean spending breakdown by category, merchant, and card</li>
-        <li>Tracks your credit card benefits — which perks are available and which you've already used</li>
-        <li>Track recurring expenses to monitor subscriptions</li>
-        <li>"Which card should I use?" — recommendations based on your actual cards and rewards</li>
-      </ul>
-      <div class="steps-label">How to get started</div>
-      <ol class="steps-list">
-        <li><span class="step-num">1</span><span>Go to <a href="https://point-taken-tan.vercel.app" target="_blank">point-taken-tan.vercel.app</a> and sign up with your Google account or email address.</span></li>
-        <li><span class="step-num">2</span><span>Create a <a href="https://beta-bridge.simplefin.org" target="_blank">SimpleFIN account</a> ($1.50/month or $15/year) — this is the secure bridge that connects your banks without sharing your passwords.</span></li>
-        <li><span class="step-num">3</span><span>In SimpleFIN, connect your banks and credit cards, then generate a setup token and paste it into Point-Taken. One-time setup.</span></li>
-        <li><span class="step-num">4</span><span>Your transactions will start syncing automatically. Explore your spending breakdown, set up your cards, and check which benefits you still have available.</span></li>
-        <li><span class="step-num">5</span><span>Add Point-Taken to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android — for quick access anytime you want to check your spending.</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Carpe Cena -->
-  <div class="card card-cena">
-    <div class="card-header">
-      <div class="card-tag">🍽️ Dining</div>
-      <div class="card-title">Carpe Cena <span class="by-request-badge">By request</span></div>
-      <div class="card-subtitle">Never miss a reservation again</div>
-      <p class="card-description">A reservation watcher that monitors your favorite restaurants across platforms and alerts you the moment a table opens up. Still under construction — but if you're interested, reach out and Jeremy will get you in early.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Watches reservation availability at your target restaurants across multiple booking platforms</li>
-        <li>Alerts you the moment a table opens up for your preferred date, time, and party size</li>
-        <li>Set it and forget it — no refreshing pages or checking apps manually</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Carpe Cena is available by request. Reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will get you set up.
-      </div>
-    </div>
-  </div>
-
-  <!-- Trip Planner -->
-  <div class="card card-trip">
-    <div class="card-header">
-      <div class="card-tag">🗺️ Travel</div>
-      <div class="card-title">Trip Planner <span class="by-request-badge">By invitation</span></div>
-      <div class="card-subtitle">Plan your vacation visually and strategically</div>
-      <p class="card-description">A visual trip planning tool that lets you compare and map out the full shape of a vacation — side-by-side flight options, alternative hotels, and different itinerary paths — so you can make the best call before you book anything.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Plot out multiple versions of a trip — different hotels, different routings, different itineraries</li>
-        <li>Compare flight and accommodation options side by side</li>
-        <li>Visualize the full arc of a vacation before committing to anything</li>
-        <li>Helps you plan strategically, not just reactively</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Trip Planner is available by invitation. Reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will share it with you directly.
-      </div>
-    </div>
-  </div>
-
-  <!-- Wine App -->
-  <div class="card card-wine">
-    <div class="card-header">
-      <div class="card-tag">🍷 Wine</div>
-      <div class="card-title">Bottle Notes</div>
-      <div class="card-subtitle">Scan a label, build your cellar</div>
-      <p class="card-description">Point your camera at any wine label and the details are pulled in automatically — vintner, grapes, origin, vintage, and more. Log tasting notes, track bottles you own, and build a searchable record of everything you've tried.</p>
-      <div class="card-actions">
-        <a href="https://wine-tasting-six.vercel.app" target="_blank" class="btn-open">Open app ↗</a>
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Get started <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Scan any wine label with your phone camera — name, vintner, grapes, origin, and alcohol pulled in automatically</li>
-        <li>Add tasting notes, a rating, and where you tried it</li>
-        <li>Track your collection — bottles owned, quantities, and a "Drink a bottle" flow to keep counts accurate</li>
-        <li>Want to Try list for wines you've heard about but haven't opened yet</li>
-        <li>Searchable history of every wine you've logged</li>
-      </ul>
-      <div class="steps-label">How to get started</div>
-      <ol class="steps-list">
-        <li><span class="step-num">1</span><span>Go to <a href="https://wine-tasting-six.vercel.app" target="_blank">wine-tasting-six.vercel.app</a> and sign up with your Google account or email address.</span></li>
-        <li><span class="step-num">2</span><span>Tap the scan button, point your camera at a wine label, and let it do its thing.</span></li>
-        <li><span class="step-num">3</span><span>Add your notes — where you had it, what you thought, how you'd rate it.</span></li>
-        <li><span class="step-num">4</span><span>Add Bottle Notes to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android — so it's always handy at a restaurant or a shop.</span></li>
-      </ol>
-    </div>
-  </div>
-
-  <!-- Hazel's Garden -->
-  <div class="card card-hazel">
-    <div class="card-header">
-      <div class="card-tag">🌱 Gardening</div>
-      <div class="card-title">Hazel's Garden <span class="by-request-badge">By request</span></div>
-      <div class="card-subtitle">Plan, grow, and track your garden — season by season</div>
-      <p class="card-description">A garden planning and tracking app named after the real head of the operation. Map out your plots, log your harvests, journal what's growing, and get AI-powered plant advice when something looks off. Built for serious home gardeners who want to remember what worked.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Visual garden map — lay out your plots, assign what you're growing, and track planting dates</li>
-        <li>Harvest log with running totals by variety, so you always know what produced well</li>
-        <li>Photo journal — attach pictures to any entry and track how things are progressing</li>
-        <li>AI plant advisor — describe a problem or snap a photo and get a diagnosis with next steps</li>
-        <li>Shared gardens — invite others to view or co-manage a garden with you</li>
-        <li>Year-over-year history so you can rotate crops and learn from past seasons</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Hazel's Garden is available by request. If you're interested, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will get you set up.
-      </div>
-    </div>
-  </div>
-
-  <!-- Traveling Sibs -->
-  <div class="card card-sibs">
-    <div class="card-header">
-      <div class="card-tag">✈️ Travel</div>
-      <div class="card-title">Traveling Sibs <span class="by-request-badge">Private</span></div>
-      <div class="card-subtitle">Know when everyone's out of town</div>
-      <p class="card-description">A shared away-date tracker for a small group of siblings. Everyone logs their travel windows, and the whole thing syncs automatically to each person's Google Calendar — no imports, no manual updates.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Simple date-range entry — add a from/to date and an optional label like "beach trip"</li>
-        <li>Combined view of all siblings' away dates, color-coded by person</li>
-        <li>Personalized Google Calendar feed — subscribe once and it auto-refreshes, showing only the others' dates so there's no duplication</li>
-        <li>Private app — login required, accounts by invitation only</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Traveling Sibs is a private app. If you received an invite from Jeremy, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> to get set up.
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <div class="contact-section">
-    <h2>Reach out to the team</h2>
-    <p>Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share additions you would like. Don't be shy.</p>
-    <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a>
-  </div>
-  <p>Built by <strong>Jeremy & Hazel</strong> — for friends & family, with love.</p>
-</footer>
-
-<script>
-  function toggleCard(btn) {
-    const card = btn.closest('.card');
-    const details = card.querySelector('.card-details');
-    if (!details) return;
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    const arrow = btn.querySelector('.arrow');
-    if (arrow) arrow.style.transform = !isOpen ? 'rotate(90deg)' : '';
-  }
-</script>
-
-</body>
-</html>
+    <div class="carousel" id="carousel-gulliver">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="data:image/jpeg;base64,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
