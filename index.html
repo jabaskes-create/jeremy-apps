@@ -502,4 +502,81 @@
       <div class="card-tag">🌱 Gardening</div>
       <div class="card-title">Hazel's Garden <span class="by-request-badge">By request</span></div>
       <div class="card-subtitle">Plan, grow, and track your garden — season by season</div>
-      <p class="card-description">A garden planning and tracking app named after the real head of the operation. Map out your plots, log your harvests, journal what's growing, and get AI-powered plant advice when something looks off. Built for serious home gardeners who want to remember what worked.<
+      <p class="card-description">A garden planning and tracking app named after the real head of the operation. Map out your plots, log your harvests, journal what's growing, and get AI-powered plant advice when something looks off. Built for serious home gardeners who want to remember what worked.</p>
+      <div class="card-actions">
+        <button class="btn-toggle" onclick="toggleCard(this)">
+          ▶ Learn more <span class="arrow">›</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-details">
+      <div class="features-label">What it does</div>
+      <ul class="features-list">
+        <li>Visual garden map — lay out your plots, assign what you're growing, and track planting dates</li>
+        <li>Harvest log with running totals by variety, so you always know what produced well</li>
+        <li>Photo journal — attach pictures to any entry and track how things are progressing</li>
+        <li>AI plant advisor — describe a problem or snap a photo and get a diagnosis with next steps</li>
+        <li>Shared gardens — invite others to view or co-manage a garden with you</li>
+        <li>Year-over-year history so you can rotate crops and learn from past seasons</li>
+      </ul>
+      <div class="steps-label">How to get access</div>
+      <div class="request-note">
+        Hazel's Garden is available by request. If you're interested, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will get you set up.
+      </div>
+    </div>
+  </div>
+
+  <!-- Traveling Sibs -->
+  <div class="card card-sibs">
+    <div class="card-header">
+      <div class="card-tag">✈️ Travel</div>
+      <div class="card-title">Traveling Sibs <span class="by-request-badge">Private</span></div>
+      <div class="card-subtitle">Know when everyone's out of town</div>
+      <p class="card-description">A shared away-date tracker for a small group of siblings. Everyone logs their travel windows, and the whole thing syncs automatically to each person's Google Calendar — no imports, no manual updates.</p>
+      <div class="card-actions">
+        <button class="btn-toggle" onclick="toggleCard(this)">
+          ▶ Learn more <span class="arrow">›</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-details">
+      <div class="features-label">What it does</div>
+      <ul class="features-list">
+        <li>Simple date-range entry — add a from/to date and an optional label like "beach trip"</li>
+        <li>Combined view of all siblings' away dates, color-coded by person</li>
+        <li>Personalized Google Calendar feed — subscribe once and it auto-refreshes, showing only the others' dates so there's no duplication</li>
+        <li>Private app — login required, accounts by invitation only</li>
+      </ul>
+      <div class="steps-label">How to get access</div>
+      <div class="request-note">
+        Traveling Sibs is a private app. If you received an invite from Jeremy, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> to get set up.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="contact-section">
+    <h2>Reach out to the team</h2>
+    <p>Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share additions you would like. Don't be shy.</p>
+    <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a>
+  </div>
+  <p>Built by <strong>Jeremy & Hazel</strong> — for friends & family, with love.</p>
+</footer>
+
+<script>
+  function toggleCard(btn) {
+    const card = btn.closest('.card');
+    const details = card.querySelector('.card-details');
+    if (!details) return;
+    const isOpen = details.classList.contains('open');
+    details.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    const arrow = btn.querySelector('.arrow');
+    if (arrow) arrow.style.transform = !isOpen ? 'rotate(90deg)' : '';
+  }
+</script>
+
+</body>
+</html>
