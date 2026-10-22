@@ -250,6 +250,8 @@
     .card-gulliver { --accent: #4a7c6f; }
     .card-nightly  { --accent: #c06b3a; }
     .card-point    { --accent: #2a3a6a; }
+    .card-cena     { --accent: #a0522d; }
+    .card-trip     { --accent: #2a6a8a; }
     .card-wine     { --accent: #7a2a4a; }
     .card-hazel    { --accent: #5a7a3a; }
     .card-sibs     { --accent: #5a5aaa; }
@@ -309,7 +311,7 @@
       <div class="card-tag">🧳 Travel</div>
       <div class="card-title">Gulliver Travels</div>
       <div class="card-subtitle">Your personal travel command center</div>
-      <p class="card-description">A trip organizer built to replace TripIt — forward your confirmation emails and they automatically become a clean, day-by-day itinerary. Great for solo travel or planning trips with others.</p>
+      <p class="card-description">A trip organizer that turns your confirmation emails into a clean, day-by-day itinerary automatically. Build out your travel plans, track every reservation, and curate a personal restaurant database for every destination you visit.</p>
       <div class="card-actions">
         <a href="https://gullivertravels.app" target="_blank" class="btn-open">Open app ↗</a>
         <button class="btn-toggle" onclick="toggleCard(this)">
@@ -378,7 +380,7 @@
       <div class="card-tag">💳 Finance</div>
       <div class="card-title">Point-Taken</div>
       <div class="card-subtitle">Know exactly where your money goes</div>
-      <p class="card-description">A personal finance tracker that connects securely to your bank accounts and credit cards, automatically syncing transactions so you always have a clear picture of your spending — without the complexity of apps like <s>Mint</s>.</p>
+      <p class="card-description">A personal finance tracker that connects securely to your bank accounts and credit cards, automatically syncing transactions so you always have a clear picture of your spending.</p>
       <div class="card-actions">
         <a href="https://point-taken-tan.vercel.app" target="_blank" class="btn-open">Open app ↗</a>
         <button class="btn-toggle" onclick="toggleCard(this)">
@@ -403,6 +405,61 @@
         <li><span class="step-num">4</span><span>Your transactions will start syncing automatically. Explore your spending breakdown, set up your cards, and check which benefits you still have available.</span></li>
         <li><span class="step-num">5</span><span>Add Point-Taken to your home screen — tap Share then "Add to Home Screen" on iPhone, or the menu on Android — for quick access anytime you want to check your spending.</span></li>
       </ol>
+    </div>
+  </div>
+
+  <!-- Carpe Cena -->
+  <div class="card card-cena">
+    <div class="card-header">
+      <div class="card-tag">🍽️ Dining</div>
+      <div class="card-title">Carpe Cena <span class="by-request-badge">By request</span></div>
+      <div class="card-subtitle">Never miss a reservation again</div>
+      <p class="card-description">A reservation watcher that monitors your favorite restaurants across platforms and alerts you the moment a table opens up. Still under construction — but if you're interested, reach out and Jeremy will get you in early.</p>
+      <div class="card-actions">
+        <button class="btn-toggle" onclick="toggleCard(this)">
+          ▶ Learn more <span class="arrow">›</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-details">
+      <div class="features-label">What it does</div>
+      <ul class="features-list">
+        <li>Watches reservation availability at your target restaurants across multiple booking platforms</li>
+        <li>Alerts you the moment a table opens up for your preferred date, time, and party size</li>
+        <li>Set it and forget it — no refreshing pages or checking apps manually</li>
+      </ul>
+      <div class="steps-label">How to get access</div>
+      <div class="request-note">
+        Carpe Cena is available by request. Reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will get you set up.
+      </div>
+    </div>
+  </div>
+
+  <!-- Trip Planner -->
+  <div class="card card-trip">
+    <div class="card-header">
+      <div class="card-tag">🗺️ Travel</div>
+      <div class="card-title">Trip Planner <span class="by-request-badge">By invitation</span></div>
+      <div class="card-subtitle">Plan your vacation visually and strategically</div>
+      <p class="card-description">A visual trip planning tool that lets you compare and map out the full shape of a vacation — side-by-side flight options, alternative hotels, and different itinerary paths — so you can make the best call before you book anything.</p>
+      <div class="card-actions">
+        <button class="btn-toggle" onclick="toggleCard(this)">
+          ▶ Learn more <span class="arrow">›</span>
+        </button>
+      </div>
+    </div>
+    <div class="card-details">
+      <div class="features-label">What it does</div>
+      <ul class="features-list">
+        <li>Plot out multiple versions of a trip — different hotels, different routings, different itineraries</li>
+        <li>Compare flight and accommodation options side by side</li>
+        <li>Visualize the full arc of a vacation before committing to anything</li>
+        <li>Helps you plan strategically, not just reactively</li>
+      </ul>
+      <div class="steps-label">How to get access</div>
+      <div class="request-note">
+        Trip Planner is available by invitation. Reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will share it with you directly.
+      </div>
     </div>
   </div>
 
@@ -445,61 +502,4 @@
       <div class="card-tag">🌱 Gardening</div>
       <div class="card-title">Hazel's Garden <span class="by-request-badge">By request</span></div>
       <div class="card-subtitle">Plan, grow, and track your garden — season by season</div>
-      <p class="card-description">A garden planning and tracking app named after the real head of the operation. Map out your plots, log your harvests, journal what's growing, and get AI-powered plant advice when something looks off. Built for serious home gardeners who want to remember what worked.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Visual garden map — lay out your plots, assign what you're growing, and track planting dates</li>
-        <li>Harvest log with running totals by variety, so you always know what produced well</li>
-        <li>Photo journal — attach pictures to any entry and track how things are progressing</li>
-        <li>AI plant advisor — describe a problem or snap a photo and get a diagnosis with next steps</li>
-        <li>Shared gardens — invite others to view or co-manage a garden with you</li>
-        <li>Year-over-year history so you can rotate crops and learn from past seasons</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Hazel's Garden is available by request. If you're interested, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> and Jeremy will get you set up.
-      </div>
-    </div>
-  </div>
-
-  <!-- Traveling Sibs -->
-  <div class="card card-sibs">
-    <div class="card-header">
-      <div class="card-tag">✈️ Travel</div>
-      <div class="card-title">Traveling Sibs <span class="by-request-badge">Private</span></div>
-      <div class="card-subtitle">Know when everyone's out of town</div>
-      <p class="card-description">A shared away-date tracker for a small group of siblings. Everyone logs their travel windows, and the whole thing syncs automatically to each person's Google Calendar — no imports, no manual updates.</p>
-      <div class="card-actions">
-        <button class="btn-toggle" onclick="toggleCard(this)">
-          ▶ Learn more <span class="arrow">›</span>
-        </button>
-      </div>
-    </div>
-    <div class="card-details">
-      <div class="features-label">What it does</div>
-      <ul class="features-list">
-        <li>Simple date-range entry — add a from/to date and an optional label like "beach trip"</li>
-        <li>Combined view of all siblings' away dates, color-coded by person</li>
-        <li>Personalized Google Calendar feed — subscribe once and it auto-refreshes, showing only the others' dates so there's no duplication</li>
-        <li>Private app — login required, accounts by invitation only</li>
-      </ul>
-      <div class="steps-label">How to get access</div>
-      <div class="request-note">
-        Traveling Sibs is a private app. If you received an invite from Jeremy, reach out to <a href="mailto:jabaskes@gmail.com">jabaskes@gmail.com</a> to get set up.
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <div class="contact-section">
-    <h2>Reach out to the team</h2>
-    <p>Reach out to the development team of <strong>Jeremy</strong> and <strong>Hazel</strong> (Head Chewer of Ideas) — for help getting set up or using features, to report a bug or to share ad
+      <p class="card-description">A garden planning and tracking app named after the real head of the operation. Map out your plots, log your harvests, journal what's growing, and get AI-powered plant advice when something looks off. Built for serious home gardeners who want to remember what worked.<
