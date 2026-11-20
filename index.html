@@ -94,7 +94,9 @@
       color: #444;
       line-height: 1.65;
       margin-bottom: 18px;
+      display: none;
     }
+    .card.open .card-description { display: block; }
 
     .card-actions {
       display: flex;
@@ -379,8 +381,8 @@
 <body>
 
 <header>
-  <h1>Apps for people who love <em>food, wine, travel, gardening, walking and money</em></h1>
-  <p>No subscriptions, no ads, no nonsense. Just useful tools made by me for people like you.</p>
+  <h1>Apps for people who love <em>food, wine, travel, walking, gardening and money</em></h1>
+  <p>No subscriptions, no ads, no nonsense. Just useful tools made for people like you.</p>
 </header>
 
 <main>
@@ -778,6 +780,7 @@
     const isOpen = details.classList.contains('open');
     details.classList.toggle('open', !isOpen);
     btn.classList.toggle('open', !isOpen);
+    card.classList.toggle('open', !isOpen);
     const arrow = btn.querySelector('.arrow');
     if (arrow) arrow.style.transform = !isOpen ? 'rotate(90deg)' : '';
   }
